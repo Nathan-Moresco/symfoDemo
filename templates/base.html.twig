@@ -3,15 +3,25 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        <link rel="icon" class="rounded-full" href="{{ asset('images/gitLogo-round.png') }}">
+        
         {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
+
+        <script src="https://kit.fontawesome.com/fe5697ca0b.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include "includes/navbar.html.twig" %}
+
+        <div class="flex flex-col justify-center items-center p-12 gap-6">
+            {% block content %}{% endblock %}
+        </div>
+
     </body>
 </html>

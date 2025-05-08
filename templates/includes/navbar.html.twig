@@ -1,0 +1,22 @@
+<div class="sticky top-0 left-0 w-full bg-primary text-secondary gap-2 p-4 flex justify-between items-center nav-bar">
+    <div class="left-header-block flex gap-2 items-center float-left">
+        <span class="text-2xl" title='{{ "Ceci n'est pas mon CV !"|trans }}'>{{"SymfoDemo"}}</span>
+    </div>
+    <div class="middle-header-block flex gap-2 items-center">
+    </div>
+    <div class="right-header-block flex gap-2 items-center">
+        {% if not (account ?? false) %}
+            <a class="common-button bg-light text-primary h-8" title='{{ "Connexion"|trans }}' href="{{ path('login') }}">
+                {{ "Connexion"|trans }}&nbsp;<i class="fa fa-arrow-right-to-bracket"></i>
+            </a>
+        {% else %}
+            <a class="common-button bg-light text-primary h-8" title='{{ "Espace compte"|trans }}'>
+                {{ "Compte"|trans }}&nbsp;<i class="fa-regular fa-user"></i>
+            </a>
+        {% endif %}
+        <a class="common-button bg-secondary text-primary round-btn h-8 w-8" title='{{ "GitHub"|trans }}'
+            target="_blank" href="https://github.com/Nathan-Moresco">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+</div> 
