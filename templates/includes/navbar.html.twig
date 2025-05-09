@@ -1,20 +1,24 @@
-<div class="sticky top-0 left-0 w-full bg-primary text-secondary gap-2 p-4 flex justify-between items-center nav-bar">
-    <div class="left-header-block flex gap-2 items-center float-left">
-        <span class="text-2xl" title='{{ "Ceci n'est pas mon CV !"|trans }}'>{{"SymfoDemo"}}</span>
+<div class="nav-bar sticky left-0 top-0 flex w-full items-center justify-between gap-2 bg-primary p-4 text-secondary">
+    <div class="left-header-block float-left flex items-center gap-2">
+        <a class="text-2xl" title='{{ "Ceci n'est pas mon CV !"|trans }}' href="{{ path('index') }}">{{"SymfoDemo"}}</a>
     </div>
-    <div class="middle-header-block flex gap-2 items-center">
+    <div class="middle-header-block flex items-center gap-2">
     </div>
-    <div class="right-header-block flex gap-2 items-center">
-        {% if not (account ?? false) %}
-            <a class="common-button bg-light text-primary h-8" title='{{ "Connexion"|trans }}' href="{{ path('login') }}">
+    <div class="right-header-block flex items-center gap-2">
+        {% if not (app.user ?? false) %}
+            <a class="common-button h-8 bg-light text-primary" title='{{ "Connexion"|trans }}' href="{{ path('login') }}">
                 {{ "Connexion"|trans }}&nbsp;<i class="fa fa-arrow-right-to-bracket"></i>
             </a>
         {% else %}
-            <a class="common-button bg-light text-primary h-8" title='{{ "Espace compte"|trans }}'>
+            <a class="common-button h-8 bg-light text-primary" title='{{ "Espace compte"|trans }}' href="{{ path('account') }}">
                 {{ "Compte"|trans }}&nbsp;<i class="fa-regular fa-user"></i>
             </a>
+
+            <a class="common-button round-btn h-8 w-8 bg-red-400 text-primary" title='{{ "Déconnexion"|trans }}'  href="{{ path('logout') }}">
+                <i class="fa fa-arrow-right-to-bracket rotate-180"></i>
+            </a>
         {% endif %}
-        <a class="common-button bg-secondary text-primary round-btn h-8 w-8" title='{{ "GitHub"|trans }}'
+        <a class="common-button round-btn h-8 w-8 bg-secondary text-primary" title='{{ "GitHub"|trans }}'
             target="_blank" href="https://github.com/Nathan-Moresco">
             <i class="fa-brands fa-github"></i>
         </a>

@@ -23,6 +23,20 @@ security:
             # https://symfony.com/doc/current/security/impersonating_user.html
             # switch_user: true
 
+        # secured_area:
+        #     pattern: ^/
+        #     anonymous: ~
+        # provider: chain_provider
+
+            form_login:
+                login_path: loginAction
+                check_path: loginAction
+                enable_csrf: true
+                
+            logout:
+                path: /logout
+                target: /login
+
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:

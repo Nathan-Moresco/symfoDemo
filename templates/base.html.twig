@@ -17,11 +17,13 @@
         <script src="https://kit.fontawesome.com/fe5697ca0b.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <div id="hide-panel" class="primary-glass invisible absolute z-30 h-full w-full opacity-0 transition-all duration-300"></div>
         {% include "includes/navbar.html.twig" %}
 
-        <div class="flex flex-col justify-center items-center p-12 gap-6">
+        <div class="flex flex-col items-center justify-center gap-6 p-12">
             {% block content %}{% endblock %}
         </div>
 
+        {% block extra_js %}{% endblock %}
     </body>
 </html>

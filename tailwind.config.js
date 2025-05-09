@@ -5,14 +5,17 @@ module.exports = {
     "./templates/*.html.twig",
     "./templates/**/*.html.twig",
     "./templates/**/**/*.html.twig",
+    "./src/Form/*.php",
   ],
   theme: {
-    colors: {
-      primary: '#051014',
-      secondary: '#FB8B24',
-      light: '#D6D9CE',
+    extend: {
+      colors: {
+        trasparent: 'transparent',
+        primary: '#051014',
+        secondary: '#FB8B24',
+        light: '#D6D9CE',
+      },
     },
-    extend: {},
   },
   plugins: [],
 }
